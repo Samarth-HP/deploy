@@ -1,0 +1,23 @@
+---
+- name: Deploy
+  remote_user: root
+  hosts: cache
+  tasks:
+    # - name: Update .env file
+    #   copy:
+    #     src: ./.env
+    #     dest: /root/.env
+
+    # # - name: Update docker-compose file
+    # # - copy:
+    # #     src: ./docker-compose.yml
+    # #     dest: /root/docker-compose.yml
+
+    # - name: Stop docker
+    #   command: docker-compose down
+
+    # - name: Start docker
+    #   command: docker-compose up -d
+
+    - name: Status docker
+      shell: docker ps

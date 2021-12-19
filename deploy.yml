@@ -1,23 +1,23 @@
 ---
 - name: Deploy
   remote_user: root
-  hosts: cache
+  hosts: esamwad
   tasks:
-    # - name: Update .env file
-    #   copy:
-    #     src: ./.env
-    #     dest: /root/.env
+    - name: Update .env file
+      copy:
+        src: ./.env.prod
+        dest: /root/.env.prod
 
-    # # - name: Update docker-compose file
-    # # - copy:
-    # #     src: ./docker-compose.yml
-    # #     dest: /root/docker-compose.yml
+    - name: Update docker-compose file
+      copy:
+        src: ./docker-compose.yml
+        dest: /root/docker-compose.yml
 
-    # - name: Stop docker
-    #   command: docker-compose down
+    - name: Stop docker
+      command: docker-compose down
 
-    # - name: Start docker
-    #   command: docker-compose up -d
+    - name: Start docker
+      command: docker-compose up -d
 
     - name: Status docker
       shell: docker ps

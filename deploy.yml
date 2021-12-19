@@ -13,6 +13,9 @@
         src: ./docker-compose.yml
         dest: /root/docker-compose.yml
 
+    - name: Pull latest image
+      command: docker-compose pull
+
     - name: Stop docker
       command: docker-compose down
 
